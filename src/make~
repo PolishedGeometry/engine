@@ -1,0 +1,27 @@
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S), Linux)
+    COMPILER = g++
+    FLAGS = -std=c++1y -pedantic -Wall
+    GL_FLAGS = -lGL -lglfw
+endif
+ifeq ($(UNAME_S), Darwin)
+    COMPILER = clang++
+    FLAGS = -std=c++1y -stdlib=libc++ -pedantic -Wall
+    GL_FLAGS = -lGLEW -framework OpenGL -lm
+    GLAD_FLAGS = -ldl
+endif
+FILES = $(wildcard *.cpp)
+APP_NAME = opengl-app
+
+all: main
+
+main: $(FILES)
+    $(COMPILER) $(FLAGS) $(FILES) glad.c -o $(APP_NAME) $(GL_FLAGS) $(GLAD_FLAGS)
+
+.PHONY: clean run
+clean:
+    rm opengl-app
+
+run: opengl-app
+    ./opengl-app

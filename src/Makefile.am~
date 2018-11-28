@@ -1,0 +1,3 @@
+AUTOMAKE_OPTIONS = foreign
+bin_PROGRAMS = engine
+engine_SOURCES = main.cpp
