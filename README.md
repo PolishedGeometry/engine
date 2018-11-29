@@ -4,8 +4,8 @@ Start of 3D geometry engine for simulations.
 This branch will be for linux development
 
 Requires GLAD with OpenGL 3.3 or higher
-         GLFW
-         GLM
+	 GLFW
+	 GLM
 
 Include libraries in /lib and while in /build use command: cmake ..
 to build project and use the Makefile generated
