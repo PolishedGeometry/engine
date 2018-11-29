@@ -7,8 +7,8 @@ Requires GLAD with OpenGL 3.3 or higher
          GLFW
          GLM
 
-GLFW Can be installed
-Must place contents of glad's "/include" in a folder where gcc will look for included directories
+Include libraries in /lib and while in /build use command: cmake ..
+to build project and use the Makefile generated
 
-Compile with g++ -o run.exe main.cpp glad.c -lglfw -ldl
-Autoconf and automake on the way
+or make sure all libraries are installed along with glad being placed somewhere g++ will look for included libraries and use the command:
+g++ -o Engine main.cpp glad.c -lglfw -ldl

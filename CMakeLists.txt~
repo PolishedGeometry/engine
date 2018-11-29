@@ -1,0 +1,20 @@
+cmake_minimum_required (VERSION 2.6)
+project(Engine)
+
+set (Engine_VERSION_MAJOR 1)
+set (Engine_VERSION_MINOR 0)
+
+set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
+set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+set(BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+set(SOURCES "${SRC_DIR}/main.cpp")
+
+#include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
+add_subdirectory (MathFunctions)
+
+configure_file (
+  "${PROJECT_SOURCE_DIR}/EngineConfig.h.in"
+  "${PROJECT_BIN_DIR}/EngineConfig.h"
+  )
+
+add_executable(Engine ${SOURCES})
